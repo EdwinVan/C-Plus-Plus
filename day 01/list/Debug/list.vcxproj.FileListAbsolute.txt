@@ -1,0 +1,2 @@
+H:\Edwin\Desktop\C++ Code\list\Debug\list.exe
+H:\Edwin\Desktop\C++ Code\list\Debug\list.pdb
