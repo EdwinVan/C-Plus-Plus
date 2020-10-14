@@ -1,0 +1,2 @@
+H:\Edwin\Desktop\C++\day 02\list_insert\Debug\list_insert.exe
+H:\Edwin\Desktop\C++\day 02\list_insert\Debug\list_insert.pdb
