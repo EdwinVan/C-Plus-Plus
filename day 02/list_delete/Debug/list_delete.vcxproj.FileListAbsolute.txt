@@ -1,2 +1,0 @@
-H:\Edwin\Desktop\C++\day 02\list_delete\Debug\list_delete.exe
-H:\Edwin\Desktop\C++\day 02\list_delete\Debug\list_delete.pdb
