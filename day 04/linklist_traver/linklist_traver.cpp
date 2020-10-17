@@ -28,7 +28,7 @@ typedef struct LNode       // 定义链表的结点结构
 
 typedef struct LNode * LinkList; // 创建一个表LinkList
 
-Status InitList(LinkList &L)
+Status InitList(LinkList &L)        // 初始化单链表
 {
     L=(LinkList) malloc(sizeof(LNode));
     if(!L)  {   return Error;   }
@@ -36,36 +36,38 @@ Status InitList(LinkList &L)
     return OK;
 }
 
-Status LinkListInsert(LinkList L,int i,datatype e)
+Status LinkListInsert(LinkList L,int i,datatype e)     // 插入元素e到指定单链表位置i
 {
-    LinkList p; // 单链表的下一个结点
+    LinkList p; 
     p = L;
     
     int j = 1;
-    if(p && j < i)
+    if(p && j < i)      // 链表还未空、还未到序号
     {
-        p=L->next;
-        ++j;
+        p=L->next;      // 没有到指定位置则一直向后面的结点移动
+        ++j;              
     }
-    if(!p || j>i)      // 未找到此结点
+    if(!p || j>i)       // 未找到此结点
     {
         return Error;
     }
-    LinkList s;                                 
-    s=(LinkList) malloc (sizeof(datatype));
-    s->data = e;
+
+    LNode *s;                                 
+    s=(LinkList) malloc (sizeof(datatype));  // 给s分配内存
+    s->data = e;          
     s->next = p->next;
     p->next = s;
+    p->data = s->data;
     return OK;
 }
 
-Status visit(datatype e)
+Status visit(datatype e)     // 打印结点值e
 {
     printf("%d  ",e);
     return OK;
 }
 
-Status LinkListTraver(LinkList L)
+Status LinkListTraver(LinkList L)  // 打印单链表的所有值
 {
     LinkList s;
     s = L->next;
@@ -78,20 +80,20 @@ Status LinkListTraver(LinkList L)
     return OK;
 }
 
-int main()
+int main()      
 {
-    LinkList L;
+    LinkList L;  
     InitList(L);
     printf("请输入单链表的长度: ");
     int n;
     cin>>n;
     
-    srand(time(NULL));
+    srand(time(NULL));             // 随机数种子
     for(int i=0;i<n;i++)
     {
         datatype elem;
         elem = rand() % 100;
-        LinkListInsert(L, 1, elem);
+        LinkListInsert(L, 1, elem);     
     }
-    LinkListTraver(L);
+    LinkListTraver(L);          // 输出单链表
 }
