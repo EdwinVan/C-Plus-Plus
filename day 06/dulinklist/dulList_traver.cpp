@@ -1,7 +1,8 @@
-// 双向链表存入26个英文大写字母，用户输入一个数字，从此处打印所有字母
+// 创建双向链表存入26个英文大写字母，执行打印所有字母操作
 // 2020/10/18
 // fyj
 
+#include <corecrt_math.h>
 #include <iostream>
 #include <string>
 #include "stdlib.h"
@@ -13,6 +14,7 @@
 #define ERROR -1
 #define ElemType char
 
+
 typedef struct DuLNode
 {
     ElemType data;
@@ -23,7 +25,7 @@ typedef struct DuLNode
 Status DuLList_Init(DuLinkList *L)
 {
     *L = (DuLinkList) malloc (sizeof(DuLNode));
-    if(!L) {return ERROR;}
+    if(!L) {return OVERFLOW;}
     (*L)->prior = (*L)->next = *L;
     return OK;
 }
@@ -66,7 +68,7 @@ int main()
     DuLList_Init(&L);
     DuLList_Creat(&L);
     printf("双向链表中已经放入了26个英文字母.\n");
-    printf("打印双向链表中的元素: ");
+    printf("输出双向链表中的元素: ");
     DuLList_Traver(&L);
     printf("\n");
 }
