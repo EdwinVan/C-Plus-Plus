@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string>
 #include "stdlib.h"
-#include "string.h"
 
 #define OK 1
 #define True 1
